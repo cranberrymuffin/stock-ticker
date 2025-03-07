@@ -1,14 +1,16 @@
 import protobuf from "protobufjs";
+import fetchAndParseSAndP500 from "./sp500.js";
 
 let ws = new WebSocket("wss://streamer.finance.yahoo.com");
 // Load the .proto file
 const root = await protobuf.load("ticker-data.proto");
+const tickers = await fetchAndParseSAndP500();
 
 ws.onopen = function () {
   //Subscribe to the channel
   ws.send(
     JSON.stringify({
-      subscribe: ["AAPL"],
+      subscribe: tickers,
     })
   );
 };
