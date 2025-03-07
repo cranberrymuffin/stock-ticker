@@ -1,0 +1,15 @@
+{
+  "name": "ticker-table",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "real time ticker data displayed in ag-grid",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "protobufjs": "^7.4.0"
+  }
+}
